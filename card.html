@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<head>
+    <title>
+        <meta charset="UTF-8">
+        <meta name="description" content="test tokens">
+        <meta name="keywords" content="test, html">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta http-equiv="X-UA-Compatible" content="ie=edge">
+        <title>Test | Figma Tokens</title>
+    
+        <!-- Google Font -->
+        <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@200;300;400;600;900&display=swap" rel="stylesheet">
+        <script src="https://unpkg.com/phosphor-icons"></script>
+        <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.6.2/jquery.min.js"> </script>
+    
+        <!-- Css Styles -->
+        <link rel="stylesheet" href="styles.css" type="text/css">
+    </title>
+</head>
+<body>
+    <!-- Add icon library -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+<div class="card">
+  <h6>Califica tu servicio</h1>
+  <p class="title">Cuéntanos cómo fue tu experiencia</p>
+  <div class="emojis">
+    <i class="ph-smiley-sad"></i>
+    <i class="ph-smiley-meh"></i>
+    <i class="ph-smiley"></i>
+  </div>
+    <form action="/action_page.php">
+        <textarea id="w3review" name="w3review" rows="4" cols="50">Agrega tus comentarios</textarea>
+        <br>
+        <input type="submit" value="Guardar">
+      </form>  
+</div>
+</body>
+
+<script>
+    $(function() {
+   var people = [];
+   $.getJSON('tokens.json', function(data) {
+       $.each(data.person, function(i, f) {
+          var tblRow = "<tr>" + "<td>" + f.firstName + "</td>" +
+           "<td>" + f.lastName + "</td>" + "<td>" + f.job + "</td>" + "<td>" + f.roll + "</td>" + "</tr>"
+           $(tblRow).appendTo("#userdata tbody");
+     });
+
+   });
+
+});
+</script>
